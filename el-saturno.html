@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Saturno - Diario Digital de Chile</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .header {
+            background-color: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 3px solid #c00;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin: 0;
+            font-family: 'Times New Roman', serif;
+            letter-spacing: 2px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin: 5px 0;
+            font-style: italic;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .date-bar {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+        }
+
+        .main-news {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .side-news {
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .news-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item h2 {
+            color: #c00;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .news-item h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+
+        .news-meta {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        .news-content {
+            font-size: 1.1em;
+            line-height: 1.8;
+        }
+
+        .category-tag {
+            display: inline-block;
+            background-color: #c00;
+            color: white;
+            padding: 3px 8px;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+        }
+
+        .add-news-form {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .add-news-form input,
+        .add-news-form textarea,
+        .add-news-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            font-family: 'Times New Roman', serif;
+        }
+
+        .add-news-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #c00;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-family: 'Times New Roman', serif;
+            font-size: 1em;
+        }
+
+        button:hover {
+            background-color: #a00;
+        }
+
+        .delete-btn {
+            background-color: #333;
+        }
+
+        .delete-btn:hover {
+            background-color: #000;
+        }
+
+        .chilean-flag {
+            width: 30px;
+            height: 20px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>EL SATURNO</h1>
+        <p>Tu diario digital de Chile</p>
+    </div>
+
+    <div class="date-bar" id="current-date">
+        <!-- La fecha se insertará aquí con JavaScript -->
+    </div>
+
+    <div class="container">
+        <div class="news-grid">
+            <div class="main-news">
+                <h2>Noticias Principales</h2>
+                <div id="main-news-container">
+                    <!-- Las noticias principales se insertarán aquí -->
+                </div>
+            </div>
+
+            <div class="side-news">
+                <h2>Noticias Secundarias</h2>
+                <div id="side-news-container">
+                    <!-- Las noticias secundarias se insertarán aquí -->
+                </div>
+            </div>
+        </div>
+
+        <div class="add-news-form">
+            <h2>Agregar Nueva Noticia</h2>
+            <select id="news-category">
+                <option value="main">Noticia Principal</option>
+                <option value="side">Noticia Secundaria</option>
+            </select>
+            <input type="text" id="news-title" placeholder="Título de la noticia">
+            <textarea id="news-content" placeholder="Contenido de la noticia"></textarea>
+            <button onclick="addNews()">Publicar Noticia</button>
+        </div>
+    </div>
+
+    <script>
+        // Mostrar fecha actual
+        function updateDate() {
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const date = new Date().toLocaleDateString('es-ES', options);
+            document.getElementById('current-date').textContent = date.toUpperCase();
+        }
+
+        // Noticias pre-cargadas de Chile
+        const defaultNews = [
+            {
+                id: 1,
+                category: 'main',
+                title: 'Chile anuncia nuevo plan de desarrollo económico',
+                content: 'El gobierno chileno ha presentado un ambicioso plan de desarrollo económico que busca impulsar la innovación y el emprendimiento en el país. El plan incluye incentivos fiscales para empresas tecnológicas y programas de capacitación laboral.',
+                date: new Date().toLocaleDateString('es-ES')
+            },
+            {
+                id: 2,
+                category: 'main',
+                title: 'Descubren nueva especie de pingüino en la Antártida chilena',
+                content: 'Científicos chilenos han anunciado el descubrimiento de una nueva especie de pingüino en la Antártida chilena. El hallazgo representa un importante avance en el estudio de la biodiversidad del continente blanco.',
+                date: new Date().toLocaleDateString('es-ES')
+            },
+            {
+                id: 3,
+                category: 'side',
+                title: 'Santiago celebra Festival Internacional de Jazz',
+                content: 'La capital chilena se prepara para recibir a los mejores músicos de jazz del mundo en su festival anual. El evento contará con presentaciones gratuitas en diferentes puntos de la ciudad.',
+                date: new Date().toLocaleDateString('es-ES')
+            },
+            {
+                id: 4,
+                category: 'side',
+                title: 'Nuevo récord de producción de cobre',
+                content: 'Chile ha alcanzado un nuevo récord en la producción de cobre, consolidando su posición como el principal productor mundial del metal rojo. La industria minera reporta un crecimiento del 5% en el último trimestre.',
+                date: new Date().toLocaleDateString('es-ES')
+            }
+        ];
+
+        // Inicializar noticias si no existen
+        if (!localStorage.getItem('news-items')) {
+            localStorage.setItem('news-items', JSON.stringify(defaultNews));
+        }
+
+        function addNews() {
+            const category = document.getElementById('news-category').value;
+            const title = document.getElementById('news-title').value;
+            const content = document.getElementById('news-content').value;
+
+            if (!title || !content) {
+                alert('Por favor, completa todos los campos');
+                return;
+            }
+
+            const news = {
+                id: Date.now(),
+                category: category,
+                title: title,
+                content: content,
+                date: new Date().toLocaleDateString('es-ES')
+            };
+
+            let newsItems = JSON.parse(localStorage.getItem('news-items') || '[]');
+            newsItems.push(news);
+            localStorage.setItem('news-items', JSON.stringify(newsItems));
+
+            // Limpiar formulario
+            document.getElementById('news-title').value = '';
+            document.getElementById('news-content').value = '';
+
+            displayNews();
+        }
+
+        function displayNews() {
+            const newsItems = JSON.parse(localStorage.getItem('news-items') || '[]');
+            const mainContainer = document.getElementById('main-news-container');
+            const sideContainer = document.getElementById('side-news-container');
+
+            mainContainer.innerHTML = '';
+            sideContainer.innerHTML = '';
+
+            newsItems.sort((a, b) => b.id - a.id);
+
+            newsItems.forEach(news => {
+                const newsElement = document.createElement('div');
+                newsElement.className = 'news-item';
+                newsElement.innerHTML = `
+                    <span class="category-tag">${news.category === 'main' ? 'PRINCIPAL' : 'SECUNDARIA'}</span>
+                    <h3>${news.title}</h3>
+                    <div class="news-meta">${news.date}</div>
+                    <div class="news-content">${news.content}</div>
+                    <button class="delete-btn" onclick="deleteNews(${news.id})">Eliminar Noticia</button>
+                `;
+
+                if (news.category === 'main') {
+                    mainContainer.appendChild(newsElement);
+                } else {
+                    sideContainer.appendChild(newsElement);
+                }
+            });
+        }
+
+        function deleteNews(id) {
+            if (confirm('¿Estás seguro de que quieres eliminar esta noticia?')) {
+                let newsItems = JSON.parse(localStorage.getItem('news-items') || '[]');
+                newsItems = newsItems.filter(news => news.id !== id);
+                localStorage.setItem('news-items', JSON.stringify(newsItems));
+                displayNews();
+            }
+        }
+
+        // Inicializar
+        updateDate();
+        displayNews();
+    </script>
+</body>
+</html> 
