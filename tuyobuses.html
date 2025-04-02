@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuyoBuses - Venta de Pasajes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .search-section {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .search-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            padding: 0.8rem;
+            border: 1px solid #000000;
+            border-radius: 4px;
+        }
+
+        .search-button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1.1em;
+            grid-column: 1 / -1;
+        }
+
+        .buses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .bus-card {
+            border: 1px solid #000000;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .bus-header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 1rem;
+        }
+
+        .bus-content {
+            padding: 1.5rem;
+        }
+
+        .bus-info {
+            margin-bottom: 1rem;
+        }
+
+        .bus-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .book-button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+        }
+
+        .seats-available {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>TuyoBuses</h1>
+        <p>Tu viaje, tu comodidad, tu elección</p>
+    </header>
+
+    <div class="container">
+        <section class="search-section">
+            <form class="search-form">
+                <div class="form-group">
+                    <label for="origin">Origen</label>
+                    <input type="text" id="origin" placeholder="Ciudad de origen">
+                </div>
+                <div class="form-group">
+                    <label for="destination">Destino</label>
+                    <input type="text" id="destination" placeholder="Ciudad de destino">
+                </div>
+                <div class="form-group">
+                    <label for="date">Fecha</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label for="passengers">Pasajeros</label>
+                    <select id="passengers">
+                        <option value="1">1 Pasajero</option>
+                        <option value="2">2 Pasajeros</option>
+                        <option value="3">3 Pasajeros</option>
+                        <option value="4">4 Pasajeros</option>
+                    </select>
+                </div>
+                <a href="http://127.0.0.1:3000/resultados-buses.html" button type="submit" class="search-button">Buscar Viajes</button></a>
+            </form>
+        </section>
+
+        <section class="buses-grid">
+            <div class="bus-card">
+                <div class="bus-header">
+                    <h2>Bus Premium</h2>
+                </div>
+                <div class="bus-content">
+                    <div class="bus-info">
+                        <p><strong>Origen:</strong> Santiago</p>
+                        <p><strong>Destino:</strong> Valparaíso</p>
+                        <p><strong>Hora de salida:</strong> 08:00 AM</p>
+                        <p><strong>Duración:</strong> 2 horas</p>
+                    </div>
+                    <div class="price">$15.000 CLP</div>
+                    <p class="seats-available">Asientos disponibles: 20</p>
+                    <button class="book-button">Reservar Ahora</button>
+                </div>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-header">
+                    <h2>Bus Ejecutivo</h2>
+                </div>
+                <div class="bus-content">
+                    <div class="bus-info">
+                        <p><strong>Origen:</strong> Santiago</p>
+                        <p><strong>Destino:</strong> Concepción</p>
+                        <p><strong>Hora de salida:</strong> 10:00 AM</p>
+                        <p><strong>Duración:</strong> 6 horas</p>
+                    </div>
+                    <div class="price">$25.000 CLP</div>
+                    <p class="seats-available">Asientos disponibles: 15</p>
+                    <button class="book-button">Reservar Ahora</button>
+                </div>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-header">
+                    <h2>Bus Turismo</h2>
+                </div>
+                <div class="bus-content">
+                    <div class="bus-info">
+                        <p><strong>Origen:</strong> Santiago</p>
+                        <p><strong>Destino:</strong> La Serena</p>
+                        <p><strong>Hora de salida:</strong> 09:00 AM</p>
+                        <p><strong>Duración:</strong> 5 horas</p>
+                    </div>
+                    <div class="price">$20.000 CLP</div>
+                    <p class="seats-available">Asientos disponibles: 30</p>
+                    <button class="book-button">Reservar Ahora</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html> 

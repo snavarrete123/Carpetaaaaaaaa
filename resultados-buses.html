@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuyoBuses - Resultados de Búsqueda</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 3em;
+            margin-bottom: 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .search-info {
+            background-color: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .search-details {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .search-detail {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .search-detail span:first-child {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .search-detail span:last-child {
+            font-weight: bold;
+        }
+
+        .modify-search {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .filters {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .filter-button.active {
+            background-color: #000000;
+            color: #ffffff;
+        }
+
+        .buses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .bus-card {
+            border: 1px solid #000000;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #ffffff;
+        }
+
+        .bus-header {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .bus-type {
+            font-size: 1.2em;
+        }
+
+        .bus-rating {
+            font-size: 0.9em;
+        }
+
+        .bus-content {
+            padding: 1.5rem;
+        }
+
+        .bus-info {
+            margin-bottom: 1rem;
+        }
+
+        .bus-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .book-button {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1.1em;
+        }
+
+        .seats-available {
+            color: #666;
+            font-style: italic;
+        }
+
+        .bus-amenities {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .amenity {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9em;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .page-button {
+            padding: 0.5rem 1rem;
+            border: 1px solid #000000;
+            background-color: #ffffff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .page-button.active {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>TuyoBuses</h1>
+        <p>Resultados de tu búsqueda</p>
+    </header>
+
+    <div class="container">
+        <div class="search-info">
+            <div class="search-details">
+                <div class="search-detail">
+                    <span>Origen</span>
+                    <span>Santiago</span>
+                </div>
+                <div class="search-detail">
+                    <span>Destino</span>
+                    <span>Valparaíso</span>
+                </div>
+                <div class="search-detail">
+                    <span>Fecha</span>
+                    <span>15 de Marzo, 2024</span>
+                </div>
+                <div class="search-detail">
+                    <span>Pasajeros</span>
+                    <span>2</span>
+                </div>
+            </div>
+            <a href="tuyobuses.html" class="modify-search">Modificar Búsqueda</a>
+        </div>
+
+        <div class="filters">
+            <button class="filter-button active">Todos</button>
+            <button class="filter-button">Premium</button>
+            <button class="filter-button">Ejecutivo</button>
+            <button class="filter-button">Turismo</button>
+            <button class="filter-button">Más Baratos</button>
+            <button class="filter-button">Más Rápidos</button>
+        </div>
+
+        <section class="buses-grid">
+            <div class="bus-card">
+                <div class="bus-header">
+                    <h2 class="bus-type">Bus Premium</h2>
+                    <span class="bus-rating">★★★★☆</span>
+                </div>
+                <div class="bus-content">
+                    <div class="bus-info">
+                        <p><strong>Origen:</strong> Santiago</p>
+                        <p><strong>Destino:</strong> Valparaíso</p>
+                        <p><strong>Hora de salida:</strong> 08:00 AM</p>
+                        <p><strong>Duración:</strong> 2 horas</p>
+                    </div>
+                    <div class="bus-amenities">
+                        <span class="amenity">✓ WiFi</span>
+                        <span class="amenity">✓ Baño</span>
+                        <span class="amenity">✓ Aire Acondicionado</span>
+                    </div>
+                    <div class="price">$15.000 CLP</div>
+                    <p class="seats-available">Asientos disponibles: 20</p>
+                    <button class="book-button">Reservar Ahora</button>
+                </div>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-header">
+                    <h2 class="bus-type">Bus Ejecutivo</h2>
+                    <span class="bus-rating">★★★★★</span>
+                </div>
+                <div class="bus-content">
+                    <div class="bus-info">
+                        <p><strong>Origen:</strong> Santiago</p>
+                        <p><strong>Destino:</strong> Valparaíso</p>
+                        <p><strong>Hora de salida:</strong> 10:00 AM</p>
+                        <p><strong>Duración:</strong> 2 horas</p>
+                    </div>
+                    <div class="bus-amenities">
+                        <span class="amenity">✓ WiFi</span>
+                        <span class="amenity">✓ Baño</span>
+                        <span class="amenity">✓ Aire Acondicionado</span>
+                        <span class="amenity">✓ Asientos Reclinables</span>
+                    </div>
+                    <div class="price">$18.000 CLP</div>
+                    <p class="seats-available">Asientos disponibles: 15</p>
+                    <button class="book-button">Reservar Ahora</button>
+                </div>
+            </div>
+
+            <div class="bus-card">
+                <div class="bus-header">
+                    <h2 class="bus-type">Bus Turismo</h2>
+                    <span class="bus-rating">★★★☆☆</span>
+                </div>
+                <div class="bus-content">
+                    <div class="bus-info">
+                        <p><strong>Origen:</strong> Santiago</p>
+                        <p><strong>Destino:</strong> Valparaíso</p>
+                        <p><strong>Hora de salida:</strong> 02:00 PM</p>
+                        <p><strong>Duración:</strong> 2 horas</p>
+                    </div>
+                    <div class="bus-amenities">
+                        <span class="amenity">✓ Baño</span>
+                        <span class="amenity">✓ Aire Acondicionado</span>
+                    </div>
+                    <div class="price">$12.000 CLP</div>
+                    <p class="seats-available">Asientos disponibles: 30</p>
+                    <button class="book-button">Reservar Ahora</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="pagination">
+            <button class="page-button">← Anterior</button>
+            <button class="page-button active">1</button>
+            <button class="page-button">2</button>
+            <button class="page-button">3</button>
+            <button class="page-button">Siguiente →</button>
+        </div>
+    </div>
+</body>
+</html> 
