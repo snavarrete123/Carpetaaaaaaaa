@@ -3,68 +3,83 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Portafolio personal - Estudiante TEC-UCT">
-        <title>Portafolio Personal - Sebastian Navarrete</title>
-        <link rel="stylesheet" href="styles.css">
+        <meta name="description" content="Portafolio web de Sebastian Navarrete, desarrollador front-end y estudiante TEC-UCT">
+        <meta name="keywords" content="desarrollador web, front-end, HTML5, CSS3, JavaScript, portfolio">
+        <meta name="author" content="Sebastian Navarrete">
+        <title>Portfolio • Sebastian Navarrete – Estudiante TEC-UCT</title>
+        <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </head>
     <body>
+        <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
         <header class="header">
             <div class="header-content">
                 <div class="header-title">
                     <h1>Sebastian Ignacio Navarrete Ovalle</h1>
-                    <p>Estudiante TEC-UCT</p>
+                    <p class="subtitle">Estudiante TEC-UCT</p>
                 </div>
                 <nav class="nav">
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#sobre-mi">Sobre Mí</a></li>
-                        <li><a href="#habilidades">Habilidades</a></li>
-                        <li><a href="#educacion">Educación</a></li>
+                        <li><a href="#about">Sobre mí</a></li>
+                        <li><a href="#skills">Habilidades</a></li>
+                        <li><a href="#projects">Proyectos</a></li>
+                        <li><a href="#experience">Experiencia</a></li>
+                        <li><a href="#education">Educación</a></li>
+                        <li><a href="#contact">Contacto</a></li>
                     </ul>
                 </nav>
             </div>
         </header>
 
-        <main class="container">
+        <main id="main-content" class="container">
             <!-- Columna Izquierda -->
             <aside class="left-column">
-                <section id="inicio" class="profile">
-                    <img src="#" alt="Foto de perfil" class="profile-img">
-                    <h2>Sebastian Navarrete</h2>
-                    <p class="title">Estudiante TEC-UCT</p>
-                    <div class="social-links">
-                        <a href="https://github.com/snavarrete123" class="social-icon"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/?lang=es" class="social-icon"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com//galletactm" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <div class="game-avatar">
+                    <div class="avatar-container">
+                        <div class="avatar">
+                            <img src="https://i.gifer.com/4W6w.gif" alt="Avatar" class="avatar-image">
+                            <div class="health-bar">
+                                <div class="health-fill"></div>
+                            </div>
+                            <div class="level-indicator">Nivel 21</div>
+                            <div class="stats">
+                                <div class="stat">
+                                    <i class="fas fa-code"></i>
+                                    <span>HTML5</span>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 65%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-paint-brush"></i>
+                                    <span>CSS3</span>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 50%"></div>
+                                    </div>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-js"></i>
+                                    <span>JavaScript</span>
+                                    <div class="stat-bar">
+                                        <div class="stat-fill" style="width: 55%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </section>
-                
+                </div>
+
                 <section id="contacto" class="contact">
                     <h2>Contacto</h2>
                     <address>
                         <p><a href="mailto:snavarrete2024@alu.uct.cl"><i class="fas fa-envelope"></i> snavarrete2024@alu.uct.cl</a></p>
-                        <p><a href="tel:+56971354866"><i class="fas fa-phone"></i>9 7135 4866</a></p>
+                        <p><a href="tel:+56971354866"><i class="fas fa-phone"></i> +56 9 7135 4866</a></p>
                         <p><i class="fas fa-map-marker-alt"></i> Temuco, Chile</p>
                     </address>
-                </section>
-
-                <section id="habilidades" class="skills">
-                    <h2>Habilidades</h2>
-                    <div class="skill-category">
-                        <h3>Frontend</h3>
-                        <ul>
-                            <li>HTML5</li>
-                            <li>CSS3</li>
-                            <li>JavaScript</li>
-                        </ul>
-                    </div>
-                    <div class="skill-category">
-                        <h3>Herramientas</h3>
-                        <ul>
-                            <li>GitHub</li>
-                            <li>VS Code</li>
-                        </ul>
+                    <div class="social-links">
+                        <a href="https://github.com/snavarrete123" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="https://www.instagram.com/galletactm" class="social-icon"><i class="fab fa-instagram"></i></a>
                     </div>
                 </section>
 
@@ -79,87 +94,159 @@
 
             <!-- Columna Derecha -->
             <section class="right-column">
-                <article id="sobre-mi" class="about">
-                    <h2>Sobre Mí</h2>
-                    <p>¡Hola! Soy Sebastian Navarrete, estudiante de la Universidad Católica de Temuco. Me apasiona el desarrollo web y la creación de experiencias digitales atractivas y funcionales.</p>
-                    <p>Actualmente estoy enfocado en aprender y mejorar mis habilidades en el mundo de la informatica. Me encanta enfrentar nuevos desafíos que me permitan crecer profesionalmente y aplicar mis conocimientos en proyectos reales.</p>
-                    <p>Cuando no estoy estudiando o programando, disfruto de jugar videojuegos "Rocket league". También me gusta viajar.</p>
-                    <div class="personal-interests">
-                        <h3>Intereses Personales</h3>
-                        <ul>
-                            <li><i class="fas fa-camera"></i> Fotografía</li>
-                            <li><i class="fas fa-laptop"></i>Videojuegos</li>
-                            <li><i class="fas fa-laptop-code"></i> Programación</li>
-                            <li><i class="fas fa-hiking"></i> Viajar</li>
-                        </ul>
+                <section id="about" class="section" aria-labelledby="about-heading">
+                    <h2 id="about-heading">Sobre mí</h2>
+                    <div class="about-content">
+                        <p>¡Hola! Soy Sebastian Navarrete, estudiante de la Universidad Católica de Temuco. Me apasiona el desarrollo web y la creación de experiencias digitales atractivas y funcionales.</p>
+                        <p>Actualmente estoy enfocado en aprender y mejorar mis habilidades en el mundo de la informática. Me encanta enfrentar nuevos desafíos que me permitan crecer profesionalmente y aplicar mis conocimientos en proyectos reales.</p>
+                        <p>Cuando no estoy estudiando o programando, disfruto de jugar videojuegos "Rocket league". También me gusta viajar.</p>
+                        <div class="personal-interests">
+                            <h3>Intereses Personales</h3>
+                            <ul>
+                                <li><i class="fas fa-camera"></i> Fotografía</li>
+                                <li><i class="fas fa-laptop"></i> Videojuegos</li>
+                                <li><i class="fas fa-laptop-code"></i> Programación</li>
+                                <li><i class="fas fa-hiking"></i> Viajar</li>
+                            </ul>
+                        </div>
                     </div>
-                </article>
+                </section>
 
-                <article id="experiencia" class="experience">
-                    <h2>Experiencia</h2>
+                <section id="skills" class="section" aria-labelledby="skills-heading">
+                    <h2 id="skills-heading">Habilidades</h2>
+                    <div class="skills-grid">
+                        <div class="skill-card">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML5</h3>
+                            <p>Estructura semántica y accesible</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS3</h3>
+                            <p>Diseño responsivo y animaciones</p>
+                        </div>
+                        <div class="skill-card">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p>Interactividad y lógica de negocio</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="projects" class="section" aria-labelledby="projects-heading">
+                    <h2 id="projects-heading">Proyectos Destacados</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <img src="Imagenes/brave_screenshot.png" alt="Proyecto A">
+                            <h3>Diario Digital</h3>
+                            <p>Plataforma para ver noticias (aun en desarrollo).</p>
+                            <div class="project-links">
+                                <a href="#" class="project-link">Ver Demo</a>
+                                <a href="#" class="project-link">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section id="projects" class="section" aria-labelledby="projects-heading">
+                    <h2 id="projects-heading">Proyecto Tuyobuses</h2>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <img src="Imagenes/Tuyobuses.png" alt="Proyecto A">
+                            <h3>TuyoBuses</h3>
+                            <p>Plataforma para comprar pasajes (Todabia en proceso).</p>
+                            <div class="project-links">
+                                <a href="Demos/diario-chile.html" class="project-link">Ver Demo</a>
+                                <a href="" class="project-link">Código</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experience" class="section" aria-labelledby="experience-heading">
+                    <h2 id="experience-heading">Experiencia</h2>
                     <div class="timeline">
                         <div class="timeline-item">
                             <div class="timeline-date">2025 - Presente</div>
                             <div class="timeline-content">
-                                <h3>Prácticas Profesionales</h3>
+                                <h3>Asistente Técnico en Informática (Experiencia Académica)</h3>
                                 <h4>Soporte Técnico y Desarrollo de Software</h4>
-                                <p>Desarrollo de habilidades prácticas en soporte técnico y programación, aplicando conceptos adquiridos en la carrera de Técnico en Informática.</p>
+                                <p>Desarrollo de habilidades prácticas en soporte técnico y programación.</p>
                                 <ul>
-                                    <li>Atención y resolución de problemas de hardware y software</li>
-                                    <li>Desarrollo de aplicaciones sencillas en lenguajes como C# y HTML</li>
-                                    <li>Soporte y mantenimiento de redes locales y sistemas operativos</li>
-                                    <li>Implementación de soluciones de seguridad informática</li>
-                                </ul>
-                            </div>
-                        </div>
-                
-                        <div class="timeline-item">
-                            <div class="timeline-date">2024</div>
-                            <div class="timeline-content">
-                                <h3>Proyecto Académico</h3>
-                                <h4>Automatización de Tareas Administrativas</h4>
-                                <p>Desarrollo de un sistema para automatizar tareas administrativas utilizando herramientas como Excel y lenguajes de programación básicos.</p>
-                                <ul>
-                                    <li>Diseño y programación de macros en Excel</li>
-                                    <li>Automatización de flujos de trabajo con scripts en Python</li>
-                                    <li>Presentación de resultados y propuesta de mejoras en procesos administrativos</li>
+                                    <li>Participación activa en proyectos universitarios como el desarrollo de diarios digitales y programas educativos</li>
+                                    <li>Diagnóstico básico y reparación de hardware: reemplazo de componentes, limpieza interna y pruebas de funcionamiento.</li>
+                                    <li>Colaboración en el montaje y mantenimiento de equipos informáticos dentro del aula.</li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                </article>
-                
+                </section>
 
-                <article id="educacion" class="education">
-                    <h2>Educación</h2>
-                    <div class="timeline">
-                        <div class="timeline-item">
-                            <div class="timeline-date">2024 - 2026</div>
-                            <div class="timeline-content">
-                                <h3>Tecnico en Informática</h3>
-                                <h4>Universidad Católica de Temuco</h4>
-                                <p>Formación en desarrollo de software, bases de datos, redes y sistemas de información. Cursos destacados:</p>
-                                <ul>
-                                    <li>Programación Web</li>
-                                    <li>Bases de Datos</li>
-                                    <li>Redes de Computadores</li>
-                                    <li>Inteligencia Artificial</li>
-                                </ul>
-                            </div>
+                <section id="education" class="section" aria-labelledby="education-heading">
+                    <h2 id="education-heading">Educación</h2>
+                    <div class="education-grid">
+                        <div class="education-card">
+                            <h3>Técnico en Informática</h3>
+                            <p class="institution">Universidad Católica de Temuco</p>
+                            <p class="date">2024 - Presente</p>
+                            <p class="description">Formación técnica en desarrollo de software y sistemas informáticos.</p>
+                            <ul class="achievements">
+                                <li>Desarrollo de páginas web</li>
+                                <li>Programación en diferentes lenguajes</li>
+                                <li>Gestión de bases de datos</li>
+                                <li>Redes y sistemas operativos</li>
+                            </ul>
+                        </div>
+                        <div class="education-card">
+                            <h3>Educación Media</h3>
+                            <p class="institution">Instituto Claret</p>
+                            <p class="date">2019 - 2022</p>
+                            <p class="description">Formación técnica en telecomunicaciones.</p>
+                            <ul class="achievements">
+                                <li>Fundamentos de electrónica</li>
+                                <li>Redes y telecomunicaciones</li>
+                                <li>Programación básica</li>
+                                <li>Mantenimiento de equipos</li>
+                            </ul>
                         </div>
                     </div>
-                </article>
+                </section>
+
+                <section id="contact" class="section" aria-labelledby="contact-heading">
+                    <h2 id="contact-heading">Contacto</h2>
+                    <div class="contact-content">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name">Nombre:</label>
+                                <input type="text" id="name" name="name" required aria-required="true">
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" required aria-required="true">
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Mensaje:</label>
+                                <textarea id="message" name="message" required aria-required="true"></textarea>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+                            <button type="submit" class="submit-button">Enviar Mensaje</button>
+                            <div id="feedback" class="hidden" role="alert"></div>
+                        </form>
+                    </div>
+                </section>
             </section>
         </main>
-        <footer class="footer">
-            <div class="footer-content">
+
+        <footer role="contentinfo" class="footer">
+            <div class="container">
                 <p>&copy; 2024 Sebastian Navarrete. Todos los derechos reservados.</p>
             </div>
         </footer>
-        <div class="copy-phone-container">
-            <a href="https://wa.me/56971354866" target="_blank" class="copy-phone-btn">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-        </div>
+
+        <script src="script.js"></script>
+        <a href="https://wa.me/56971354866?text=Hola%20Sebastian,%20me%20gustaría%20contactarte" class="whatsapp-float" target="_blank" aria-label="Contactar por WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </body>
 </html>
