@@ -1,0 +1,1 @@
+Utilize la ia para poner el boton de insertar imagen ypara ajustar bien la imagen en elrecuadro (utilize ChatGPT y W3School) el w3 para darle un poco de diseño
