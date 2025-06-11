@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AeroVía Express</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #001f4d;">
+      <div class="container justify-content-between align-items-center">
+        <a class="navbar-brand text-white fw-bold" href="#">AeroVía Express</a>
+        <div class="d-none d-lg-flex mx-auto">
+          <ul class="navbar-nav">
+            <li class="nav-item mx-2">
+              <a class="nav-link text-white" href="#">Ofertas y destinos</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-white" href="#">Mis viajes</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-white" href="#">Centro de ayuda</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link text-white" href="#">Estado de vuelo</a>
+            </li>
+          </ul>
+        </div>
+        <button class="btn btn-outline-light rounded-pill px-4">Iniciar Sesión</button>
+      </div>
+    </nav>
+
+    <div class="container-fluid py-4" style="background-color: #4cd6cb;">
+      <div class="row align-items-center px-4">
+        <div class="col-md-8">
+          <h2 class="fw-bold">¡Vacaciones de verano!</h2>
+          <p class="fs-5">Vuela por Chile y Sudamérica con hasta 40% de descuento</p>
+          <p>
+            Encuentra paquetes, hoteles, seguros y arriendo de autos en AeroVía Express
+          </p>
+          <a href="#" class="text-primary fw-bold">Compra aquí</a>
+        </div>
+        <div class="col-md-4 text-center">
+          <img
+            src="img/polynesia.jpg"
+            class="img-fluid rounded"
+            alt="Isla"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="container bg-white shadow p-4 my-4 rounded">
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item"><a class="nav-link active" href="#">Vuelos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Paquetes</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Hoteles</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Autos</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Seguros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Upgrade</a></li>
+      </ul>
+
+      <div class="row g-2">
+        <div class="col-md-2">
+          <select class="form-select">
+            <option>Ida y Vuelta</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-select">
+            <option>Economy</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <select class="form-select">
+            <option>1 pasajero</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Origen" />
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Destino" />
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Fecha Ida" />
+        </div>
+        <div class="col-md-2">
+          <input type="text" class="form-control" placeholder="Fecha Vuelta" />
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-danger w-100">Buscar</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
