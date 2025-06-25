@@ -4,7 +4,8 @@ USE portafolio_db;
 CREATE TABLE users (
   id INT AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(50) NOT NULL,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  role ENUM('admin','user') NOT NULL DEFAULT 'user'
 );
 
 CREATE TABLE proyectos (
@@ -17,6 +18,7 @@ CREATE TABLE proyectos (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Usuario de prueba (usuario: admin, contraseña: 123456)
-INSERT INTO users (username, password) VALUES ('admin', MD5('123456'));
+INSERT INTO users (username, password, role) VALUES ('admin', MD5('123456'), 'admin');
+-- Usuario normal de prueba
+INSERT INTO users (username, password, role) VALUES ('usuario', MD5('usuario123'), 'user');
   

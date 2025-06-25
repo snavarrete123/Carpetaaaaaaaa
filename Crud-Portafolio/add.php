@@ -1,4 +1,5 @@
 <?php
+$admin = 1;
 include 'auth.php';
 include 'db.php';
 

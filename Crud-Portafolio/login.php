@@ -11,7 +11,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $result = $conn->query($sql);
 
   if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
     $_SESSION['user'] = $username;
+    $_SESSION['role'] = $user['role'];
     header("Location: index.php");
     exit();
   } else {

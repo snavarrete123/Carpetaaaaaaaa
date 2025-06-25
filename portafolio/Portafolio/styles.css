@@ -145,6 +145,7 @@ body::before {
     list-style: none;
     display: flex;
     gap: 2rem;
+    align-items: center;
 }
 
 .nav a {
@@ -168,6 +169,29 @@ body::before {
 
 .nav a:hover::after {
     width: 100%;
+}
+
+.login-btn {
+    margin-left: auto;
+}
+
+.login-btn a {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: var(--dark-bg);
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,242,254,0.15);
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.login-btn a:hover {
+    background: var(--accent-color);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(255,0,255,0.15);
 }
 
 .container {
@@ -1286,4 +1310,103 @@ body::before {
         transform: translateX(calc(100vw + 100px)) translateY(100px);
         opacity: 0;
     }
+}
+
+/* --- ADMIN MODAL --- */
+.modal {
+  display: flex;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  align-items: center;
+  justify-content: center;
+}
+.modal.hidden {
+  display: none;
+}
+.modal-content {
+  background: #222;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  min-width: 300px;
+  box-shadow: 0 0 20px #0008;
+  position: relative;
+}
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.error-message {
+  color: #ff4d4d;
+  margin-top: 0.5rem;
+}
+
+/* --- BOTÓN ADMIN --- */
+.admin-btn {
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 1rem;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.admin-btn:hover {
+  background: #444;
+}
+
+/* --- BOTONES DE ACCIÓN ADMIN --- */
+.admin-action-btn {
+  margin: 0.5rem 0.25rem 0 0.25rem;
+  padding: 0.3rem 0.7rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: bold;
+}
+.edit-btn {
+  background: #007bff;
+  color: #fff;
+}
+.edit-btn:hover {
+  background: #0056b3;
+}
+.delete-btn {
+  background: #dc3545;
+  color: #fff;
+}
+.delete-btn:hover {
+  background: #a71d2a;
+}
+
+/* --- BOTÓN ADMIN FIJO ARRIBA DERECHA --- */
+#admin-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 10001;
+  background: #222;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.3rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px #0003;
+  transition: background 0.2s;
+}
+#admin-mode-btn:hover {
+  background: #444;
 } 
